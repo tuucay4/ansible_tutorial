@@ -1,0 +1,19 @@
+---
+
+- hosts: all #targets all hosts
+  become: true #sudo
+  tasks:
+
+  - name: update repository index
+    apt:
+      update_cache: yes
+
+  - name: remove apache2 package #what the playbook does
+    apt:
+      name: apache2
+      state: absent
+      
+  - name: remove php support for apache
+    apt:
+      name: libapache2-mod-php
+      state: absent      
