@@ -4,16 +4,13 @@
   become: true #sudo
   tasks:
 
-  - name: update repository index
+  - name: install apache2 and php  package #what the playbook does
     apt:
-      update_cache: yes
-
-  - name: install apache2 package #what the playbook does
-    apt:
-      name: apache2
+      name: 
+        - apache2
+        - libapache2-mod-php
       state: latest
+      update_cache: yes
+    when: ansible_distribution == "Parrot OS"
       
-  - name: add php support for apache
-    apt:
-      name: libapache2-mod-php
-      state: latest      
+  
