@@ -13,3 +13,21 @@
         group: root
         mode: 0644
         
+- hosts: workstations
+  become: true
+  tasks:
+    
+    - name: install unzip
+      package:
+        name: unzip
+
+    - name: install terraform
+      unarchive: #unzip a zip file or compressed file
+        src: #linux download link address
+        dest: /usr/local/bin #common directory for binaries
+        remote_src: yes #telling ansible this is a remote source
+        mode: 0755
+        owner: root
+        group:
+            
+    
