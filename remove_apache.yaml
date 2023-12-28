@@ -1,7 +1,7 @@
 ---
 
 - hosts: all #targets all hosts
-  become: true #sudo
+  become: true ##sudo
   tasks:
 
   - name: remove apache2 and php  package #what the playbook does

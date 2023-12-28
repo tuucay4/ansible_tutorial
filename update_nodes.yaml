@@ -52,6 +52,13 @@
         state: latest
       when: ansible_distribution == "Ubuntu"
       
+- hosts: file_servers
+  become: true
+  tasks:
 
+    - name: install samba package #samba: same name for ubuntu and CentOS
+      package:
+        name: samba
+        state: latest
       
 
