@@ -11,6 +11,6 @@
         - libapache2-mod-php
       state: latest
       update_cache: yes
-    when: ansible_distribution == "Parrot OS" #
+    when: ansible_distribution == "Parrot OS"
       
   
